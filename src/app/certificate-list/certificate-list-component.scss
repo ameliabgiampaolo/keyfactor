@@ -1,0 +1,61 @@
+@import "../../scss/constants/constants";
+@import "../../scss/helpers/mixins";
+
+/* Structure */
+.example-container {
+  position: relative;
+}
+
+.example-table-container {
+  position: relative;
+  min-height: 200px;
+  max-height: 430px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+/* Column Widths */
+.mat-column-number,
+.mat-column-state {
+  max-width: 64px;
+}
+
+.mat-column-created {
+  max-width: 124px;
+}
+
+/*========================================================================*/
+/*-----------------------------MEDIA QUERIES------------------------------*/
+/*========================================================================*/
+
+.hide {
+  display: none;
+  opacity: 0;
+}
+
+ .hide-phone-lg-down{
+  display: revert;
+}
+
+ .show-phone-lg-down{
+  display: none;
+}
+
+@include for-size(phone-lg-down) {
+  .hide-phone-lg-down {
+    display: none;
+    visibility: hidden;
+  }
+
+  .show-phone-lg-down {
+    display: table-cell;
+    visibility: visible;
+  }
+}
